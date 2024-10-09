@@ -55,7 +55,7 @@ const AnimeSearch = () => {
                 </button>
             </div>
             {error && <p className="text-red-500">{error}</p>}
-            <div className="flex flex-wrap justify-between">
+            <div className="flex flex-wrap justify-center">
                 {animeList.map((anime) => (
                     <div className="p-4 border border-gray-300 rounded max-w-[250px] max-h-max" key={anime.mal_id}>
                         <img src={anime.images.jpg.image_url} alt={anime.title} className=" h-auto rounded" />
