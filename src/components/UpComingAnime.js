@@ -21,7 +21,7 @@ const UpcomingAnime = () => {
 
     return (
         <div className="mt-5 max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold mb-4">Anime yang Akan Datang</h2>
+            <h2 className="text-2xl font-bold mb-4">Upcoming anime</h2>
             {error && <p className="text-red-500">{error}</p>}
             <div className="flex flex-wrap justify-between">
                 {animeList.map((anime) => (
