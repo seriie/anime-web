@@ -23,7 +23,7 @@ const UpcomingAnime = () => {
         <div className="mt-5 max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold mb-4">Anime yang Akan Datang</h2>
             {error && <p className="text-red-500">{error}</p>}
-            <div className="flex flex-wrap justify-center">
+            <div className="flex flex-wrap justify-between">
                 {animeList.map((anime) => (
                     <div className="p-4 border border-gray-300 rounded max-w-[250px] max-h-max" key={anime.mal_id}>
                         <img className='' src={anime.images.jpg.image_url} alt={anime.title}></img>
