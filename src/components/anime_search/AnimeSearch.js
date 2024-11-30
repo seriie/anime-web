@@ -90,6 +90,7 @@ export default function AnimeSearch() {
                             <p className="text-sm"><strong>Rating:</strong> {anime.rating}</p>
                             <p className="text-sm"><strong>Genre:</strong> {anime.genres.map((genre) => genre.name).join(', ')}</p>
                             <p className="text-sm"><strong>Status:</strong> {anime.status}</p>
+                            <p className="text-sm"><strong>Score:</strong> {anime.score}</p>
                             <button
                                 onClick={() => handleSelectAnime(anime)}
                                 className="mt-2 text-blue-500 hover:underline text-sm"
