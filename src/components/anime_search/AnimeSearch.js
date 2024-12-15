@@ -21,7 +21,7 @@ export default function AnimeSearch() {
             });
             setAnimeList(response.data.data);
         } catch (err) {
-            setError('Terjadi kesalahan saat mengambil data dari API.');
+            setError('Something went wrong');
         } finally {
             setLoading(false);
         }
@@ -33,7 +33,7 @@ export default function AnimeSearch() {
             const response = await axios.get(`${URL}/${animeId}/videos`);
             setVideos(response.data.data || []);
         } catch (err) {
-            setError('Gagal mengambil video anime.');
+            setError('Failed to load anime video');
         } finally {
             setLoading(false);
         }

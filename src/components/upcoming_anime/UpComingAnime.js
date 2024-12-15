@@ -14,7 +14,7 @@ const UpcomingAnime = () => {
                 const response = await axios.get('https://api.jikan.moe/v4/seasons/upcoming');
                 setAnimeList(response.data.data);
             } catch (err) {
-                setError('Gagal mengambil data anime upcoming: ' + err.message);
+                setError('Failed to load upcoming anime : ' + err.message);
             } finally {
                 setLoading(false);
             }
@@ -27,11 +27,9 @@ const UpcomingAnime = () => {
         <div className="mt-10 max-w-7xl mx-auto bg-gray-50 p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold mb-6">Upcoming Anime</h2>
 
-            {/* Loading dan Error */}
             {loading && <p className="text-gray-500 text-center text-lg">Loading...</p>}
             {error && <p className="text-red-500">{error}</p>}
 
-            {/* Daftar Anime */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {animeList.map((anime) => {
                     const japaneseTitle = anime?.titles?.find(title => title.type === "Japanese")?.title || "N/A";
@@ -63,7 +61,7 @@ const UpcomingAnime = () => {
                                     rel="noopener noreferrer"
                                     className="text-blue-500 hover:underline mt-2 inline-block"
                                 >
-                                    Lihat Detail
+                                    See Detail
                                 </a>
                             </div>
                         </div>
