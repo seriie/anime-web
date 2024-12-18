@@ -32,11 +32,10 @@ export default function OnGoingAnime() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {Array.isArray(data) && data.map((anime) => {
-                    const japaneseTitle = anime?.titles?.find(title => title.type === "Japanese")?.title || "N/A";
+                    // const japaneseTitle = anime?.titles?.find(title => title.type === "Japanese")?.title || "N/A";
                     const englishTitle = anime?.titles?.find(title => title.type === "English")?.title || "N/A";
                     const genres = anime?.genres?.map((genre) => genre.name).join(", ");
                     const releaseDate = anime.aired.from ? new Date(anime.aired.from).toDateString() : 'TBA';
-                    const animeTrailer = anime.trailer.url;
 
                     return (
                         <div
@@ -51,7 +50,7 @@ export default function OnGoingAnime() {
                                 <p className="text-sm"><strong>Genre:</strong> {genres || 'N/A'}</p>
                                 <p className="text-sm"><strong>Episode:</strong> {anime.episodes || 'TBA'}</p>
                                 <p className="text-sm"><strong>Source:</strong> {anime.source || 'N/A'}</p>
-                                <p className="text-sm"><strong>Skor:</strong> {anime.score || 'Not Rated Yet'}</p>
+                                <p className="text-sm"><strong>Score:</strong> {anime.score || 'Not Rated Yet'}</p>
 
                                 <div className="justify-between flex items-center">
                                     <a
@@ -62,11 +61,6 @@ export default function OnGoingAnime() {
                                     >
                                         See Detail
                                     </a>
-                                    {animeTrailer ? 
-                                        <a href={anime.trailer.url}>
-                                            <button className="justify-center p-2 text-slate-50 hover:bg-sky-400 transition-all duration-200 hover:-translate-y-1 rounded-md bg-sky-500">Watch Trailer</button>
-                                        </a> : <p className="text-gray-400">No trailer</p>
-                                    }
                                 </div>
                              </div>
                         </div>
