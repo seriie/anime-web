@@ -69,7 +69,7 @@ const UpcomingAnime = () => {
                                         See Detail
                                     </a>
                                     {animeTrailer ? (
-                                        <a href={anime.trailer.url}>
+                                        <a href={anime.trailer.url} target='__blank'>
                                             <button className="justify-center p-2 text-slate-50 hover:bg-sky-400 transition-all duration-200 hover:-translate-y-1 rounded-md bg-sky-500">
                                                 Watch Trailer
                                             </button>
